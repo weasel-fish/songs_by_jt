@@ -1,0 +1,2 @@
+class SuperFansController < ApplicationController
+end
