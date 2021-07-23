@@ -64,9 +64,7 @@ You need to create the following relationships:
 - A `SuperFan` also belongs to a single favorite JT `Song`
 - A `Song` has many fans who have marked it as their favorite
 
-Start by creating the models and migrations for the following database tables:
-
-![domain diagram](domain.png)
+Start by `Drawing out your DB Diagrams` then create the models and migrations for the above database tables:
 
 If you use a Rails generator to create the models, make sure to use the
 `--no-test-framework` flag to avoid overwriting the test files.
@@ -100,15 +98,15 @@ Return JSON data in the format below:
 
 ```json
 [
-  {
+   {
     "id": 1,
-    "name": "Sottocasa NYC",
-    "address": "298 Atlantic Ave, Brooklyn, NY 11201"
+    "name": "Cry Me A River",
+    "youtube_link": "https://youtu.be/DksSPZTZES0"
   },
   {
     "id": 2,
-    "name": "PizzArte",
-    "address": "69 W 55th St, New York, NY 10019"
+    "name": "SexyBack",
+    "youtube_link": "https://youtu.be/3gOHvDP_vCs"
   }
 ]
 ```
@@ -165,51 +163,62 @@ the appropriate HTTP status code:
 }
 ```
 
-### GET /pizzas
+### GET /super_fans
 
-Return JSON data in the format below:
+Return JSON data in the format below: 
 
 ```json
 [
   {
     "id": 1,
-    "name": "Cheese",
-    "ingredients": "Dough, Tomato Sauce, Cheese"
+    "name": "Arthur",
+    "years_of_fandom": "5",
+    "song": {
+      "id": 2,
+      "name": "SexyBack",
+      "youtube_link": "https://youtu.be/3gOHvDP_vCs",
+    }
   },
   {
     "id": 2,
-    "name": "Pepperoni",
-    "ingredients": "Dough, Tomato Sauce, Cheese, Pepperoni"
-  }
+    "name": "Brendan",
+    "years_of_fandom": "20",
+    "song": {
+      "id": 5,
+      "name": "Cry Me A River",
+      "youtube_link": "https://youtu.be/DksSPZTZES0",
+    }
+  },
 ]
 ```
 
-### POST /restaurant_pizzas
+### POST /reviews
 
-This route should create a new `RestaurantPizza` that is associated with an
-existing `Pizza` and `Restaurant`. It should accept an object with the following
+This route should create a new `Review` that is associated with an
+existing `Song` and `SuperFan`. It should accept an object with the following
 properties in the body of the request:
 
 ```json
 {
-  "price": 5,
-  "pizza_id": 1,
-  "restaurant_id": 3
+  "song_id": 5,
+  "super_fan_id": 1,
+  "rating": 3,
+  "comment": "some comment"
 }
 ```
 
-If the `RestaurantPizza` is created successfully, send back a response with the data
-related to the `Pizza`:
+If the `Review` is created successfully, send back a response with the data
+related to the `Song`:
 
 ```json
 {
   "id": 1,
-  "name": "Cheese",
-  "ingredients": "Dough, Tomato Sauce, Cheese"
+  "name": "Cry Me A River",
+  "youtube_link": "https://youtu.be/DksSPZTZES0"
 }
 ```
 
-If the `RestaurantPizza` is **not** created successfully, return the following
+If the `Review` is **not** created successfully, return the following
 JSON data, along with the appropriate HTTP status code:
 
 ```json
@@ -219,7 +228,6 @@ JSON data, along with the appropriate HTTP status code:
 ```
 
 ## Custom Rout
-
 
 ### GET /song/top_charts
 
