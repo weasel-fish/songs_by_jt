@@ -3,7 +3,7 @@
 For this assessment, you'll be working with domain for Justin Timberlake superfans.
 
 In this repo, there is a Rails application with some features built out. There
-is also a fully built React frontend application, so you can test if your API is
+is also a fully built React frontend application (No there is Not), so you can test if your API is 
 working.
 
 Your job is to build out the Rails API to add the functionality described in the
@@ -17,7 +17,7 @@ To download the dependencies for the frontend and backend, run:
 bundle install
 ```
 
-**THIS WILL NOT WORK (SKIP)** 
+**NEXT STEP WILL NOT WORK (SKIP)** 
 ```sh
 npm install --prefix client
 ```
@@ -33,7 +33,7 @@ rails s
 
 You can run your React app on [`localhost:4000`](http://localhost:4000) by running:
 
-**THIS WILL NOT WORK (SKIP)** 
+**NEXT STEP WILL NOT WORK (SKIP)** 
 ```sh
 npm start --prefix client
 ```
@@ -42,7 +42,7 @@ You are not being assessed on React, and you don't have to update any of the Rea
 code; the frontend code is available just so that you can test out the behavior
 of your API in a realistic setting.
 
-**THIS WILL NOT WORK (SKIP)** 
+**NEXT STEP WILL NOT WORK (SKIP)**  
 
 There are also tests included which you can run using `rspec` to check your work.
 
