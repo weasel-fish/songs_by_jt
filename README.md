@@ -118,19 +118,23 @@ If the `Song` exists, return JSON data in the format below:
 ```json
 {
   "id": 1,
-  "name": "Sottocasa NYC",
-  "address": "298 Atlantic Ave, Brooklyn, NY 11201",
-  "pizzas": [
+  "name": "Rock Your Body",
+  "youtube_link": "https://youtu.be/TSVHoHyErBQ",
+  "reviews": [
     {
       "id": 1,
-      "name": "Cheese",
-      "ingredients": "Dough, Tomato Sauce, Cheese"
+      "super_fan_id": 1, //Challenge: can you return the superfans name here instead of id
+      "song_id": 1, 
+      "rating": 5,
+      "comment": "gibberish",
     },
     {
-      "id": 2,
-      "name": "Pepperoni",
-      "ingredients": "Dough, Tomato Sauce, Cheese, Pepperoni"
-    }
+      "id": 1,
+      "super_fan_id": 1,
+      "song_id": 1,
+      "rating": 5,
+      "comment": "gibberish",
+    },
   ]
 }
 ```
@@ -227,7 +231,7 @@ JSON data, along with the appropriate HTTP status code:
 }
 ```
 
-## Custom Rout
+## Custom Route
 
 ### GET /song/top_charts
 
